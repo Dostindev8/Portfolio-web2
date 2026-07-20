@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "title": "Dostin Santana — Fullstack Developer | Logic Code Spot",
+    "description": "Fullstack Web Developer based in Santo Domingo, DR. Founder of Logic Code Spot. MERN, C#/.NET, DGII systems, e-commerce & SaaS."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "work": "Work",
+    "skills": "Skills",
+    "contact": "Contact",
+    "welcome": "Welcome to my portfolio"
+  },
+  "intro": {
+    "skip": "Skip intro",
+    "skipAria": "Skip introduction animation",
+    "name": "Dostin Santana",
+    "role": "Fullstack Developer",
+    "tagline": "I turn ideas into robust digital solutions."
+  },
+  "hero": {
+    "eyebrow": "Logic Code Spot · Santo Domingo, D.R.",
+    "name": "Dostin Santana Tejeda",
+    "headline": "Fullstack Developer building enterprise systems that",
+    "headlineAccent": "scale.",
+    "sub": "I architect MERN and C#/.NET solutions: DGII invoicing, e-commerce, SaaS and REST APIs with JWT security, RBAC and AI-accelerated delivery.",
+    "ctaPrimary": "View projects",
+    "ctaSecondary": "Contact me",
+    "scroll": "Scroll",
+    "techTitle": "Technologies I work with",
+    "stats": {
+    "years": "5+ Years Experience",
+    "projects": "25+ Projects Completed",
+    "clients": "100% Client Satisfaction"
+    }
+  },
+  "about": {
+    "eyebrow": "ABOUT ME",
+    "title": "I turn ideas into robust digital solutions.",
+    "bio": "Results-driven Fullstack Developer, 25 years old, with more than 5 years building software for businesses: enterprise web systems, SaaS platforms and robust digital solutions. Expert in the MERN stack and the C#/.NET ecosystem. I deliver DGII-compliant electronic invoicing, e-commerce, raffle engines, university REST APIs and private lending apps — always with clean architecture, JWT, RBAC and scalable APIs.",
+    "bio2": "I actively integrate Claude, ChatGPT, Gemini, Cursor and Antigravity into daily workflows to raise quality and speed.",
+    "role": "Founder, CEO & Lead Developer",
+    "company": "Logic Code Spot (LCS) Software Solutions",
+    "bullets": [
+      "Clean, maintainable and scalable code",
+      "Secure architectures with RBAC & JWT",
+      "Performance-focused and SEO-friendly",
+      "Agile mindset and strong communication"
+    ],
+    "more": "More about me",
+    "terminalLive": "live",
+    "highlights": [
+      { "title": "Problem solving", "desc": "Logical, efficient approach to complex systems." },
+      { "title": "Client focus", "desc": "C-Level communication and real business value." },
+      { "title": "Engineering + AI", "desc": "−35% delivery time with AI tooling." }
+    ],
+    "experienceTitle": "Experience",
+    "experience": [
+      {
+        "role": "Fullstack Developer",
+        "org": "Logic Code Spot Software Solutions",
+        "period": "2024–Present",
+        "points": [
+          "End-to-end enterprise web systems for corporate clients in DR",
+          "Design and implementation of end-to-end ERP systems (inventory, invoicing, DR payroll, reporting)",
+          "Software code and process audits — technical reviews, tech debt and security hardening",
+          "Quality & information security: OWASP Top 10, JWT + RBAC, encryption and role-based access control",
+          "REST APIs with Node/Express and C#/ASP.NET Core; MongoDB and SQL Server",
+          "SaaS: FactP, private lending, GoPrize.SDQ, e-commerce",
+          "JWT + refresh-token rotation + RBAC + barcode scanning",
+          "AI for code review and automation (−35% delivery time)"
+        ]
+      },
+      {
+        "role": "System Analyst & Frontend Developer",
+        "org": "Freelance",
+        "period": "2024–2025",
+        "points": [
+          "Pixel-perfect responsive UIs with React, Angular, HTML5/CSS3/SCSS, TypeScript",
+          "E-commerce: cart, coupons, PayPal + bank transfer, emails, province shipping",
+          "Redux, Context API and Git/GitHub in multidisciplinary teams"
+        ]
+      },
+      {
+        "role": "Data Curator & Server Administrator",
+        "org": "Carlos Slim Foundation",
+        "period": "2022–2023",
+        "points": [
+          "Data curation and validation in relational databases",
+          "Executive reports, dashboards and server administration",
+          "Frontend with HTML5, Tailwind CSS and vanilla JavaScript"
+        ]
+      }
+    ],
+    "educationTitle": "Education",
+    "education": [
+      { "title": "Software Engineering (in progress)", "org": "UFHEC", "period": "2025–2027" },
+      { "title": "Project Management & MS Project", "org": "SIGMATEC", "period": "2022–2023" },
+      { "title": "High School Diploma", "org": "Colegio Ciudad Real 1 / CENAPEC", "period": "2019" }
+    ]
+  },
+  "services": {
+    "eyebrow": "WHAT I DO",
+    "title": "Services I provide",
+    "subtitle": "Enterprise-grade digital solutions from Logic Code Spot Software Solutions.",
+    "learnMore": "Learn more",
+    "items": [
+      {
+        "title": "Web Development",
+        "desc": "Modern websites and web apps using React, Next.js and TypeScript.",
+        "icon": "Globe"
+      },
+      {
+        "title": "Backend Development",
+        "desc": "RESTful APIs and microservices with Node.js, Express and .NET.",
+        "icon": "Server"
+      },
+      {
+        "title": "E-commerce Solutions",
+        "desc": "Scalable online stores with payments, inventory and dashboards.",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Enterprise Systems",
+        "desc": "Business systems: invoicing, ERP, dashboards and custom solutions.",
+        "icon": "Building2"
+      },
+      {
+        "title": "AI Agents for Business",
+        "desc": "Design and development of custom AI agents that automate operational tasks, customer support, data processing and workflows — integrated directly into custom systems (ERP, CRM, invoicing, e-commerce) so your business runs with less friction and more speed.",
+        "icon": "Bot",
+        "tags": ["AI Agents", "Automation", "Custom integrations", "LLMs", "MCP"]
+      },
+      {
+        "title": "Systems Audit & ERP",
+        "desc": "Technical software audits, custom ERP implementation and security hardening for enterprise systems — focused on quality, traceability and compliance.",
+        "icon": "ShieldCheck",
+        "tags": ["Technical audit", "ERP", "Hardening", "OWASP", "RBAC"]
+      }
+    ]
+  },
+  "work": {
+    "eyebrow": "SELECTED WORKS",
+    "title": "Featured projects",
+    "subtitle": "Real products shipped for businesses and users in the Dominican Republic.",
+    "viewDetails": "View project",
+    "viewAll": "View all projects",
+    "close": "Close",
+    "stack": "Stack",
+    "features": "Features",
+    "role": "Role",
+    "filters": {
+      "all": "All",
+      "web": "Web Apps",
+      "ecommerce": "E-commerce",
+      "saas": "SaaS",
+      "systems": "Systems"
+    },
+    "back": "Back to projects",
+    "gallery": "Gallery",
+    "techUsed": "Technologies used",
+    "deliverables": "What we deliver",
+    "viewSite": "View website",
+    "viewOthers": "View other projects",
+    "stats": {
+      "clients": "Satisfied clients",
+      "delivered": "Projects delivered",
+      "lines": "Lines of code",
+      "uptime": "Uptime"
+    },
+    "items": [
+      {
+        "id": "factp",
+        "title": "FactP",
+        "tagline": "DGII-compliant electronic invoicing",
+        "role": "Lead Fullstack Developer",
+        "stack": ["React", "Vite", "Node.js", "Express", "MongoDB", "JWT"],
+        "summary": "Electronic invoicing app with DGII fiscal compliance, NCF series and multi-user management.",
+        "features": [
+          "NCF series management and XSD schema validation",
+          "Barcode scanning",
+          "Automated daily cash reconciliation",
+          "Roles: admin, cashier, supervisor",
+          "JWT with refresh-token rotation",
+          "Custom animated loading screen and admin profile panel"
+        ]
+      },
+      {
+        "id": "fashion",
+        "title": "Fashion Store",
+        "tagline": "Full e-commerce platform",
+        "role": "Fullstack Developer",
+        "stack": ["React", "Node.js", "Express", "MongoDB", "Resend", "PayPal", "JWT"],
+        "summary": "Online store with catalog, cart, wishlist, coupons and dual checkout.",
+        "features": [
+          "Catalog, cart and wishlist",
+          "Coupon and discount engine",
+          "PayPal + bank transfer checkout",
+          "Province-based shipping calculator",
+          "Confirmation emails (Resend)",
+          "Admin dashboard with sales analytics"
+        ]
+      },
+      {
+        "id": "goprize",
+        "title": "GoPrize.SDQ",
+        "tagline": "Premium raffle platform",
+        "role": "Lead Developer",
+        "stack": ["MERN", "WhatsApp API", "Cron Jobs", "3D CSS", "JWT"],
+        "summary": "Raffle platform with premium UX, 3D animations and automated notifications.",
+        "features": [
+          "Animated splash and glassmorphism landing",
+          "Holographic 3D cards",
+          "Automatic winner selection via Cron Jobs",
+          "WhatsApp and email notifications",
+          "JWT authentication"
+        ]
+      },
+      {
+        "id": "university",
+        "title": "University REST API",
+        "tagline": ".NET academic backend",
+        "role": "Backend Developer",
+        "stack": ["C#", "ASP.NET Core", "SQL Server", "EF Core", "Swagger", "JWT", "MVC"],
+        "summary": "University REST API with full CRUD, JWT auth and role-based authorization.",
+        "features": [
+          "CRUD: teachers, students, courses, enrollments and grades",
+          "Entity Framework + SQL Server",
+          "Swagger documentation",
+          "JWT and role-based authorization"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "eyebrow": "Tech stack",
+    "title": "Skills & Expertise",
+    "subtitle": "Tools and methodologies I use in production every day.",
+    "stats": [
+      "+5 Years of experience",
+      "+25 Projects completed",
+      "+15 Technologies mastered",
+      "100% Commitment & quality"
+    ],
+    "categories": [
+      {
+        "name": "Frontend",
+        "items": ["React 19", "Next.js 15", "Angular 20 (Signals)", "TypeScript/JavaScript", "HTML5/CSS3/SCSS", "Redux/Context API"]
+      },
+      {
+        "name": "Backend",
+        "items": ["Node.js/Express", "C#/ASP.NET Core", "MongoDB/Mongoose", "SQL Server/EF Core", "REST API/JWT/Auth"]
+      },
+      {
+        "name": "AI & Dev Tools",
+        "items": ["Claude", "ChatGPT", "Gemini", "Cursor Agent/Composer", "Antigravity", "MCP Integrations", "Prompt Engineering"]
+      },
+      {
+        "name": "Other",
+        "items": ["WhatsApp API", "Cron Jobs", "Resend", "PayPal SDK", "Barcode Scanning", "3D CSS", "Tailwind/Bootstrap/MUI"]
+      },
+      {
+        "name": "Methodologies",
+        "items": ["Kaizen/Lean", "Agile/Scrum", "Clean Architecture", "DDD", "Security by Design", "CI/CD", "TDD"]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "items": ["Git & GitHub", "Docker", "Vercel", "Netlify", "CI/CD", "AWS (basic)", "Postman", "Swagger"]
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "titleBefore": "Let's talk about your next",
+    "titleAccent": "project.",
+    "title": "Contact",
+    "subtitle": "Tell me what you need and I'll help turn it into a solid, secure digital solution ready to scale.",
+    "name": "Full name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "you@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Message subject",
+    "projectType": "Project type",
+    "projectTypePlaceholder": "Select an option",
+    "projectTypes": [
+      "Web Development",
+      "Backend / API",
+      "E-commerce",
+      "Enterprise / ERP",
+      "AI Agents",
+      "Audit & hardening",
+      "Other"
+    ],
+    "timeline": "Estimated timeline",
+    "timelinePlaceholder": "e.g. in 4–6 weeks",
+    "quoteCta": "Tell me about your project and I'll send a custom quote.",
+    "quoteWhatsapp": "Quote via WhatsApp",
+    "message": "Message",
+    "messagePlaceholder": "Tell me more about your project",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Message sent successfully.",
+    "successShort": "Message sent!",
+    "error": "Could not send. Email me at dostinsantana7@hotmail.com",
+    "errorShort": "Failed to send, try again",
+    "phone": "+1 829-473-7963",
+    "phoneHint": "Available 24/7 · WhatsApp",
+    "location": "Santo Domingo, D.R.",
+    "locationHint": "Dominican Republic",
+    "emailValue": "dostinsantana7@hotmail.com",
+    "emailHint": "I'll reply as soon as possible",
+    "readyTitle": "Ready to start?",
+    "readySub": "Message me on WhatsApp and we'll plan your next system together.",
+    "features": {
+      "fast": "Fast response",
+      "custom": "Custom solutions",
+      "privacy": "Confidentiality",
+      "support": "Ongoing support"
+    }
+  },
+  "footer": {
+    "brand": "Dostin Santana · Logic Code Spot",
+    "rights": "All rights reserved.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "mission": "We build enterprise software, SaaS and digital experiences that scale with your business.",
+    "navTitle": "Navigation",
+    "servicesTitle": "Services",
+    "services": [
+      "Web Development",
+      "Backend & APIs",
+      "E-commerce",
+      "Enterprise Systems",
+      "AI Agents",
+      "Audit & ERP"
+    ],
+    "focusTitle": "Focus",
+    "focus": [
+      "Clean code",
+      "Best practices",
+      "Performance",
+      "Security by design",
+      "AI-accelerated delivery"
+    ],
+    "contactTitle": "Contact",
+    "hours": "Monday – Friday: 9AM – 6PM",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "pills": [
+      "Designed with precision and code",
+      "Modern technologies",
+      "Built for the future"
+    ]
+  }
+}

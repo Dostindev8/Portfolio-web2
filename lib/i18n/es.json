@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "title": "Dostin Santana — Fullstack Developer | Logic Code Spot",
+    "description": "Fullstack Web Developer en Santo Domingo, RD. Founder de Logic Code Spot. MERN, C#/.NET, sistemas DGII, e-commerce y SaaS."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "services": "Servicios",
+    "work": "Proyectos",
+    "skills": "Skills",
+    "contact": "Contacto",
+    "welcome": "Bienvenido a mi portfolio"
+  },
+  "intro": {
+    "skip": "Saltar intro",
+    "skipAria": "Saltar animación de introducción",
+    "name": "Dostin Santana",
+    "role": "Fullstack Developer",
+    "tagline": "Transformo ideas en soluciones digitales robustas."
+  },
+  "hero": {
+    "eyebrow": "Logic Code Spot · Santo Domingo, R.D.",
+    "name": "Dostin Santana Tejeda",
+    "headline": "Fullstack Developer que construye sistemas empresariales que",
+    "headlineAccent": "escalan.",
+    "sub": "Arquitecto soluciones MERN y C#/.NET: facturación DGII, e-commerce, SaaS y APIs REST con seguridad JWT, RBAC y entrega acelerada por IA.",
+    "ctaPrimary": "Ver proyectos",
+    "ctaSecondary": "Contáctame",
+    "scroll": "Desplazar",
+    "techTitle": "Tecnologías con las que trabajo",
+    "stats": {
+    "years": "5+ Años de experiencia",
+    "projects": "25+ Proyectos completados",
+    "clients": "100% Satisfacción del cliente"
+    }
+  },
+  "about": {
+    "eyebrow": "SOBRE MÍ",
+    "title": "Transformo ideas en soluciones digitales robustas.",
+    "bio": "Fullstack Developer de 25 años con más de 5 años construyendo software para negocios: sistemas web empresariales, plataformas SaaS y soluciones digitales robustas. Experto en stack MERN y ecosistema C#/.NET. Entrego facturación electrónica DGII-compliant, e-commerce, motores de rifas, APIs REST universitarias y apps de préstamos privados — siempre con arquitectura limpia, JWT, RBAC y APIs escalables.",
+    "bio2": "Integro Claude, ChatGPT, Gemini, Cursor y Antigravity en el flujo diario para elevar calidad y velocidad de entrega.",
+    "role": "Founder, CEO & Lead Developer",
+    "company": "Logic Code Spot (LCS) Software Solutions",
+    "bullets": [
+      "Código limpio, mantenible y escalable",
+      "Arquitecturas seguras con RBAC & JWT",
+      "Enfoque en performance y SEO",
+      "Mentalidad Agile y comunicación clara"
+    ],
+    "more": "Más sobre mí",
+    "terminalLive": "live",
+    "highlights": [
+      { "title": "Resolución de problemas", "desc": "Enfoque lógico y eficiente en sistemas complejos." },
+      { "title": "Orientación al cliente", "desc": "Comunicación C-Level y entrega de valor real." },
+      { "title": "Ingeniería + IA", "desc": "−35% tiempo de entrega con herramientas de IA." }
+    ],
+    "experienceTitle": "Experiencia",
+    "experience": [
+      {
+        "role": "Fullstack Developer",
+        "org": "Logic Code Spot Software Solutions",
+        "period": "2024–Presente",
+        "points": [
+          "Sistemas web empresariales end-to-end para clientes corporativos en RD",
+          "Diseño e implementación de sistemas ERP end-to-end (inventario, facturación, nómina RD, reportes)",
+          "Auditorías de código y procesos de software — revisiones técnicas, deuda técnica y hardening",
+          "Calidad y seguridad informática: OWASP Top 10, JWT + RBAC, cifrado y control de acceso por roles",
+          "APIs REST con Node/Express y C#/ASP.NET Core; MongoDB y SQL Server",
+          "SaaS: FactP, préstamos privados, GoPrize.SDQ, e-commerce",
+          "JWT + refresh-token rotation + RBAC + escaneo de códigos de barras",
+          "IA para code review y automatización (−35% tiempo de entrega)"
+        ]
+      },
+      {
+        "role": "System Analyst & Frontend Developer",
+        "org": "Freelance",
+        "period": "2024–2025",
+        "points": [
+          "Interfaces responsive pixel-perfect con React, Angular, HTML5/CSS3/SCSS, TypeScript",
+          "E-commerce: carrito, cupones, PayPal + transferencia, emails, envíos por provincia",
+          "Redux, Context API y Git/GitHub en equipos multidisciplinarios"
+        ]
+      },
+      {
+        "role": "Data Curator & Server Administrator",
+        "org": "Carlos Slim Foundation",
+        "period": "2022–2023",
+        "points": [
+          "Curación y validación de datos en bases relacionales",
+          "Reportes ejecutivos, dashboards y administración de servidores",
+          "Frontend con HTML5, Tailwind CSS y JavaScript vanilla"
+        ]
+      }
+    ],
+    "educationTitle": "Educación",
+    "education": [
+      { "title": "Ingeniería de Software (en curso)", "org": "UFHEC", "period": "2025–2027" },
+      { "title": "Gestión de Proyectos & MS Project", "org": "SIGMATEC", "period": "2022–2023" },
+      { "title": "Bachillerato", "org": "Colegio Ciudad Real 1 / CENAPEC", "period": "2019" }
+    ]
+  },
+  "services": {
+    "eyebrow": "LO QUE HAGO",
+    "title": "Servicios que ofrezco",
+    "subtitle": "Soluciones digitales de nivel empresarial desde Logic Code Spot Software Solutions.",
+    "learnMore": "Saber más",
+    "items": [
+      {
+        "title": "Desarrollo Web",
+        "desc": "Sitios y apps web modernas con React, Next.js y TypeScript.",
+        "icon": "Globe"
+      },
+      {
+        "title": "Backend Development",
+        "desc": "APIs REST y microservicios con Node.js, Express y .NET.",
+        "icon": "Server"
+      },
+      {
+        "title": "Soluciones E-commerce",
+        "desc": "Tiendas escalables con pagos, inventario y dashboards.",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Sistemas Empresariales",
+        "desc": "Facturación, ERP, dashboards y soluciones a medida.",
+        "icon": "Building2"
+      },
+      {
+        "title": "Agentes de IA para negocio",
+        "desc": "Diseño y desarrollo de agentes de inteligencia artificial personalizados que automatizan tareas operativas, atención al cliente, procesamiento de datos y flujos de trabajo — integrados directamente a sistemas a medida (ERP, CRM, facturación, e-commerce) para que tu negocio opere con menos fricción y mayor velocidad.",
+        "icon": "Bot",
+        "tags": ["Agentes IA", "Automatización", "Integraciones a medida", "LLMs", "MCP"]
+      },
+      {
+        "title": "Auditoría de Sistemas & ERP",
+        "desc": "Auditoría técnica de software, implementación de ERP a medida y hardening de seguridad para sistemas empresariales — con foco en calidad, trazabilidad y cumplimiento.",
+        "icon": "ShieldCheck",
+        "tags": ["Auditoría técnica", "ERP", "Hardening", "OWASP", "RBAC"]
+      }
+    ]
+  },
+  "work": {
+    "eyebrow": "TRABAJOS SELECCIONADOS",
+    "title": "Proyectos destacados",
+    "subtitle": "Productos reales entregados para empresas y usuarios en República Dominicana.",
+    "viewDetails": "Ver proyecto",
+    "viewAll": "Ver todos los proyectos",
+    "close": "Cerrar",
+    "stack": "Stack",
+    "features": "Funcionalidades",
+    "role": "Rol",
+    "filters": {
+      "all": "Todos",
+      "web": "Web Apps",
+      "ecommerce": "E-commerce",
+      "saas": "SaaS",
+      "systems": "Sistemas"
+    },
+    "back": "Volver a proyectos",
+    "gallery": "Galería",
+    "techUsed": "Tecnologías utilizadas",
+    "deliverables": "Lo que entregamos",
+    "viewSite": "Ver sitio web",
+    "viewOthers": "Ver otros proyectos",
+    "stats": {
+      "clients": "Clientes satisfechos",
+      "delivered": "Proyectos entregados",
+      "lines": "Líneas de código",
+      "uptime": "Tiempo de actividad"
+    },
+    "items": [
+      {
+        "id": "factp",
+        "title": "FactP",
+        "tagline": "Facturación electrónica DGII-compliant",
+        "role": "Lead Fullstack Developer",
+        "stack": ["React", "Vite", "Node.js", "Express", "MongoDB", "JWT"],
+        "summary": "App de facturación electrónica con cumplimiento fiscal DGII, series NCF y gestión multiusuario.",
+        "features": [
+          "Gestión de series NCF y validación de esquema XSD",
+          "Escaneo de códigos de barras",
+          "Conciliación de caja diaria automatizada",
+          "Roles: admin, cajero, supervisor",
+          "JWT con refresh-token rotation",
+          "Loading screen animado y panel de perfil admin"
+        ]
+      },
+      {
+        "id": "fashion",
+        "title": "Fashion Store",
+        "tagline": "E-commerce completo",
+        "role": "Fullstack Developer",
+        "stack": ["React", "Node.js", "Express", "MongoDB", "Resend", "PayPal", "JWT"],
+        "summary": "Tienda online con catálogo, carrito, wishlist, cupones y checkout dual.",
+        "features": [
+          "Catálogo, carrito y wishlist",
+          "Motor de cupones y descuentos",
+          "Checkout PayPal + transferencia bancaria",
+          "Calculadora de envío por provincia",
+          "Emails de confirmación (Resend)",
+          "Dashboard admin con analíticas de venta"
+        ]
+      },
+      {
+        "id": "goprize",
+        "title": "GoPrize.SDQ",
+        "tagline": "Plataforma premium de rifas",
+        "role": "Lead Developer",
+        "stack": ["MERN", "WhatsApp API", "Cron Jobs", "3D CSS", "JWT"],
+        "summary": "Plataforma de rifas con experiencia premium, animaciones 3D y notificaciones automatizadas.",
+        "features": [
+          "Splash screen animado y landing glassmorphism",
+          "Tarjetas holográficas 3D",
+          "Selección automática de ganador vía Cron Jobs",
+          "Notificaciones por WhatsApp y email",
+          "Autenticación JWT"
+        ]
+      },
+      {
+        "id": "university",
+        "title": "University REST API",
+        "tagline": "Backend académico en .NET",
+        "role": "Backend Developer",
+        "stack": ["C#", "ASP.NET Core", "SQL Server", "EF Core", "Swagger", "JWT", "MVC"],
+        "summary": "API REST universitaria con CRUD completo, autenticación JWT y autorización por rol.",
+        "features": [
+          "CRUD: profesores, estudiantes, cursos, matrículas y calificaciones",
+          "Entity Framework + SQL Server",
+          "Documentación Swagger",
+          "JWT y autorización por rol"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "eyebrow": "Stack técnico",
+    "title": "Skills & Expertise",
+    "subtitle": "Herramientas y metodologías que uso en producción todos los días.",
+    "stats": [
+      "+5 Años de experiencia",
+      "+25 Proyectos completados",
+      "+15 Tecnologías dominadas",
+      "100% Compromiso y calidad"
+    ],
+    "categories": [
+      {
+        "name": "Frontend",
+        "items": ["React 19", "Next.js 15", "Angular 20 (Signals)", "TypeScript/JavaScript", "HTML5/CSS3/SCSS", "Redux/Context API"]
+      },
+      {
+        "name": "Backend",
+        "items": ["Node.js/Express", "C#/ASP.NET Core", "MongoDB/Mongoose", "SQL Server/EF Core", "REST API/JWT/Auth"]
+      },
+      {
+        "name": "IA & Dev Tools",
+        "items": ["Claude", "ChatGPT", "Gemini", "Cursor Agent/Composer", "Antigravity", "MCP Integrations", "Prompt Engineering"]
+      },
+      {
+        "name": "Otras",
+        "items": ["WhatsApp API", "Cron Jobs", "Resend", "PayPal SDK", "Barcode Scanning", "3D CSS", "Tailwind/Bootstrap/MUI"]
+      },
+      {
+        "name": "Metodologías",
+        "items": ["Kaizen/Lean", "Agile/Scrum", "Clean Architecture", "DDD", "Security by Design", "CI/CD", "TDD"]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "items": ["Git & GitHub", "Docker", "Vercel", "Netlify", "CI/CD", "AWS (básico)", "Postman", "Swagger"]
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACTO",
+    "titleBefore": "Hablemos sobre tu próximo",
+    "titleAccent": "proyecto.",
+    "title": "Contacto",
+    "subtitle": "Cuéntame qué necesitas y te ayudo a convertirlo en una solución digital sólida, segura y lista para crecer.",
+    "name": "Nombre completo",
+    "namePlaceholder": "Tu nombre",
+    "email": "Email",
+    "emailPlaceholder": "tu@email.com",
+    "subject": "Asunto",
+    "subjectPlaceholder": "Asunto del mensaje",
+    "projectType": "Tipo de proyecto",
+    "projectTypePlaceholder": "Selecciona una opción",
+    "projectTypes": [
+      "Desarrollo Web",
+      "Backend / API",
+      "E-commerce",
+      "Sistema empresarial / ERP",
+      "Agentes de IA",
+      "Auditoría & hardening",
+      "Otro"
+    ],
+    "timeline": "Fecha estimada",
+    "timelinePlaceholder": "Ej. en 4–6 semanas",
+    "quoteCta": "Cuéntame tu proyecto y te envío un presupuesto a medida.",
+    "quoteWhatsapp": "Cotizar por WhatsApp",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntame más sobre tu proyecto",
+    "send": "Enviar mensaje",
+    "sending": "Enviando…",
+    "success": "Mensaje enviado correctamente.",
+    "successShort": "¡Mensaje enviado!",
+    "error": "No se pudo enviar. Escríbeme a dostinsantana7@hotmail.com",
+    "errorShort": "Error al enviar, intenta de nuevo",
+    "phone": "+1 829-473-7963",
+    "phoneHint": "Disponible 24/7 · WhatsApp",
+    "location": "Santo Domingo, R.D.",
+    "locationHint": "República Dominicana",
+    "emailValue": "dostinsantana7@hotmail.com",
+    "emailHint": "Te responderé lo antes posible",
+    "readyTitle": "¿Listo para comenzar?",
+    "readySub": "Escríbeme por WhatsApp y armamos el plan de tu próximo sistema.",
+    "features": {
+      "fast": "Respuesta rápida",
+      "custom": "Soluciones a medida",
+      "privacy": "Confidencialidad",
+      "support": "Soporte continuo"
+    }
+  },
+  "footer": {
+    "brand": "Dostin Santana · Logic Code Spot",
+    "rights": "Todos los derechos reservados.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "mission": "Construimos software empresarial, SaaS y experiencias digitales que escalan con tu negocio.",
+    "navTitle": "Navegación",
+    "servicesTitle": "Servicios",
+    "services": [
+      "Desarrollo Web",
+      "Backend & APIs",
+      "E-commerce",
+      "Sistemas Empresariales",
+      "Agentes de IA",
+      "Auditoría & ERP"
+    ],
+    "focusTitle": "Enfoque",
+    "focus": [
+      "Código limpio",
+      "Mejores prácticas",
+      "Rendimiento",
+      "Seguridad by design",
+      "Entrega con IA"
+    ],
+    "contactTitle": "Contacto",
+    "hours": "Lunes – Viernes: 9AM – 6PM",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "pills": [
+      "Diseñado con precisión y código",
+      "Tecnologías modernas",
+      "Listo para el futuro"
+    ]
+  }
+}
