@@ -79,12 +79,9 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (!menuOpen) {
-      const id = window.setTimeout(() => menuBtnRef.current?.focus?.(), 0);
-      return () => window.clearTimeout(id);
-    }
+    if (!menuOpen) return undefined;
     const drawer = drawerRef.current;
-    if (!drawer) return;
+    if (!drawer) return undefined;
     const focusables = drawer.querySelectorAll(
       'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
     );
@@ -107,7 +104,25 @@ export default function Navbar() {
   }, [menuOpen]);
 
   const year = new Date().getFullYear();
-  const closeMenu = () => setMenuOpen(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    window.setTimeout(() => menuBtnRef.current?.focus?.(), 0);
+  };
+
+  const goTo = (href) => (e) => {
+    e.preventDefault();
+    closeMenu();
+    const id = href.replace("/#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      window.setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    } else {
+      window.location.hash = id;
+    }
+  };
 
   return (
     <>
@@ -127,8 +142,8 @@ export default function Navbar() {
 
       <header
         className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
-          scrolled
-            ? "border-b border-[var(--border)] bg-[var(--bg)]/85 backdrop-blur-xl shadow-sm"
+          scrolled || menuOpen
+            ? "border-b border-[var(--border)] bg-[var(--bg)]/90 backdrop-blur-xl shadow-sm"
             : "bg-transparent"
         }`}
       >
@@ -170,6 +185,7 @@ export default function Navbar() {
                 <li key={item.href}>
                   <a
                     href={item.href}
+                    onClick={goTo(item.href)}
                     className={`relative rounded-full px-3 py-2 text-sm transition ${
                       isActive
                         ? "font-medium text-[var(--accent)]"
@@ -186,24 +202,23 @@ export default function Navbar() {
             })}
           </ul>
 
-          <div className="relative z-50 flex items-center gap-2">
+          <div className="relative z-[55] flex items-center gap-2">
             <div className="hidden sm:contents">
               <LanguageSwitcher />
               <ThemeToggle />
             </div>
-            {/* Solo hamburguesa en header — la X vive únicamente en el drawer */}
-            {!menuOpen && (
-              <button
-                ref={menuBtnRef}
-                type="button"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] lg:hidden"
-                aria-label="Abrir menú"
-                aria-expanded={false}
-                onClick={() => setMenuOpen(true)}
-              >
-                <Menu size={20} />
-              </button>
-            )}
+            {/* Un solo control móvil: ☰ / ✕ siempre en el header */}
+            <button
+              ref={menuBtnRef}
+              type="button"
+              className="relative z-[55] flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--bg-elevated)] lg:hidden"
+              aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav-drawer"
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </nav>
       </header>
@@ -221,56 +236,43 @@ export default function Navbar() {
               onClick={closeMenu}
             />
             <motion.aside
+              id="mobile-nav-drawer"
               ref={drawerRef}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 280, damping: 28 }}
-              className="fixed top-0 right-0 z-[45] flex h-dvh w-[min(21rem,88vw)] flex-col border-l border-[var(--border)] bg-[var(--bg-elevated)]/95 backdrop-blur-xl lg:hidden"
+              className="fixed top-0 right-0 z-[42] flex h-dvh w-[min(20rem,86vw)] flex-col border-l border-[var(--border)] bg-[var(--bg-elevated)] pt-[var(--nav-h)] lg:hidden"
               role="dialog"
               aria-modal="true"
               aria-label="Menú de navegación"
             >
-              <div className="flex items-center gap-3 border-b border-white/5 px-4 py-4">
-                <a
-                  href={LCS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex min-w-0 flex-1 items-center gap-2.5"
-                  onClick={closeMenu}
-                  aria-label={LCS_NAME}
-                >
+              {/* Controles móvil (idioma/tema) — sin segunda X */}
+              <div className="flex items-center justify-between gap-3 border-b border-white/5 px-5 py-3 sm:hidden">
+                <div className="flex min-w-0 items-center gap-2.5">
                   <Image
                     src={LCS_LOGO}
                     alt=""
-                    width={56}
-                    height={56}
-                    className="h-12 w-12 shrink-0 object-contain"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 shrink-0 object-contain"
                   />
-                  <span className="min-w-0 flex-col leading-tight sm:flex">
-                    <span className="block truncate text-sm font-semibold text-[var(--fg)]">
+                  <span className="min-w-0 leading-tight">
+                    <span className="block text-xs font-semibold text-[var(--fg)]">
                       Logic Code Spot
                     </span>
-                    <span className="block truncate text-[10px] tracking-wide text-[var(--fg-muted)]">
+                    <span className="block text-[10px] text-[var(--fg-muted)]">
                       Software Solutions
                     </span>
                   </span>
-                </a>
+                </div>
                 <div className="flex shrink-0 items-center gap-2">
                   <LanguageSwitcher />
                   <ThemeToggle />
-                  <button
-                    type="button"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)]"
-                    aria-label="Cerrar menú"
-                    onClick={closeMenu}
-                  >
-                    <X size={18} />
-                  </button>
                 </div>
               </div>
 
-              <nav className="flex-1 overflow-y-auto px-4 py-4" aria-label="Mobile">
+              <nav className="flex-1 overflow-y-auto px-4 py-3" aria-label="Mobile">
                 <ul className="flex flex-col">
                   {menuItems.map((item, i) => {
                     const hash = item.href.replace("/", "");
@@ -286,7 +288,7 @@ export default function Navbar() {
                       >
                         <a
                           href={item.href}
-                          onClick={closeMenu}
+                          onClick={goTo(item.href)}
                           className={`flex min-h-14 items-center gap-3 rounded-xl px-3 py-3 text-base font-semibold transition ${
                             isActive
                               ? "bg-[var(--accent-soft)] text-[var(--accent)] shadow-[inset_0_0_0_1px_var(--accent)]"
@@ -315,7 +317,7 @@ export default function Navbar() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="GitHub"
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--fg-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)] hover:shadow-[0_0_16px_rgba(59,130,246,0.35)]"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--fg-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
                     >
                       <SiGithub size={18} />
                     </a>
@@ -326,7 +328,7 @@ export default function Navbar() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="LinkedIn"
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--fg-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)] hover:shadow-[0_0_16px_rgba(59,130,246,0.35)]"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--fg-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
                     >
                       <Linkedin size={18} />
                     </a>
@@ -335,7 +337,7 @@ export default function Navbar() {
                     <a
                       href={SOCIAL.email}
                       aria-label="Email"
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--fg-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)] hover:shadow-[0_0_16px_rgba(59,130,246,0.35)]"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--fg-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
                     >
                       <Mail size={18} />
                     </a>

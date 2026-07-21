@@ -43,19 +43,22 @@ export default function ProjectCard({
         className="flex h-full flex-col rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--project-accent)]"
         aria-label={`${ctaLabel}: ${project.name}`}
       >
-        <div className="relative aspect-[16/10] w-full shrink-0 bg-[var(--bg)]">
-          <Image
-            src={project.coverImage}
-            alt={`Portada del proyecto ${project.name}`}
-            fill
-            sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
-            className="object-cover object-center transition duration-500 group-hover:scale-[1.03]"
-            placeholder="blur"
-            blurDataURL={BLUR_DATA_URL}
-            priority={priority}
-          />
+        {/* Marco fijo: object-contain = imagen completa, sin recorte */}
+        <div className="relative aspect-[16/10] w-full shrink-0 bg-[var(--bg)] p-2.5 sm:p-3">
+          <div className="relative h-full w-full overflow-hidden rounded-xl bg-[var(--bg-elevated)]">
+            <Image
+              src={project.coverImage}
+              alt={`Portada del proyecto ${project.name}`}
+              fill
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+              className="object-contain object-center transition duration-500 group-hover:scale-[1.02]"
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL}
+              priority={priority}
+            />
+          </div>
           <span
-            className="absolute left-3 top-3 z-[1] rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-sm backdrop-blur-sm"
+            className="absolute left-3.5 top-3.5 z-[1] rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-sm backdrop-blur-sm sm:left-4 sm:top-4"
             style={{ backgroundColor: `${accent}ee` }}
           >
             {category}
