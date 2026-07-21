@@ -68,8 +68,8 @@ export const projects: Project[] = [
   {
     slug: "vapingchiller",
     name: "VapingChiller",
-    tagline: "El mejor vapeo, en un solo lugar.",
-    taglineEn: "The best vape experience, in one place.",
+    tagline: "El mejor vapeo, en un solo lugar. E-commerce completo con chatbot IA y panel admin.",
+    taglineEn: "The best vape experience in one place. Full e-commerce with AI chatbot and admin panel.",
     description:
       "Tienda en línea de productos de vapeo con catálogo de productos premium, sistema de compra fácil y segura, chatbot de asistencia con IA (Chiller Bot), gestión de marcas (Puff, Nubo, Cuzoo, Smok, Betta Ice, Alyamar), diseño oscuro con acentos morados y estética urbana/streetwear.",
     descriptionEn:
@@ -143,8 +143,8 @@ export const projects: Project[] = [
   {
     slug: "factp",
     name: "FactP",
-    tagline: "Tu sistema de facturación online. Todo en 1. Automatizado.",
-    taglineEn: "Your online invoicing system. All-in-one. Automated.",
+    tagline: "Tu sistema de facturación online. Todo en 1. Automatizado y alineado con DGII.",
+    taglineEn: "Your online invoicing system. All-in-one. Automated and DGII-aligned.",
     description:
       "Plataforma de facturación electrónica 100% en la nube, alineada con los requisitos de la DGII de República Dominicana. Genera comprobantes fiscales electrónicos (e-CF) con código QR, autorizados por la DGII, con impresión térmica directa y módulos integrados de inventario, nómina, RRHH y multi-sucursal.",
     descriptionEn:
@@ -215,8 +215,8 @@ export const projects: Project[] = [
   {
     slug: "goprize",
     name: "GoPrize.SDQ",
-    tagline: "Plataforma premium de rifas con animaciones 3D.",
-    taglineEn: "Premium raffle platform with 3D animations.",
+    tagline: "Plataforma premium de rifas con animaciones 3D y sorteos en tiempo real.",
+    taglineEn: "Premium raffle platform with 3D animations and real-time draws.",
     description:
       "Plataforma de rifas con experiencia premium, animaciones 3D CSS, glassmorphism, selección automática de ganador vía Cron Jobs y notificaciones por WhatsApp y email.",
     descriptionEn:
@@ -250,8 +250,8 @@ export const projects: Project[] = [
   {
     slug: "fashion-store",
     name: "Fashion Store",
-    tagline: "E-commerce completo con checkout dual y cupones.",
-    taglineEn: "Full e-commerce with dual checkout and coupons.",
+    tagline: "E-commerce completo con checkout dual, cupones y catálogo orientado a conversión.",
+    taglineEn: "Full e-commerce with dual checkout, coupons and a conversion-focused catalog.",
     description:
       "Tienda online con catálogo, carrito, wishlist, motor de cupones/descuentos, checkout dual (PayPal + transferencia), calculadora de envío por provincia y dashboard admin con analíticas de venta.",
     descriptionEn:
@@ -285,8 +285,8 @@ export const projects: Project[] = [
   {
     slug: "university-api",
     name: "University REST API",
-    tagline: "Backend académico en C# / ASP.NET Core.",
-    taglineEn: "Academic backend in C# / ASP.NET Core.",
+    tagline: "API REST académica en C# / ASP.NET Core con JWT, EF Core y Swagger.",
+    taglineEn: "Academic REST API in C# / ASP.NET Core with JWT, EF Core and Swagger.",
     description:
       "API REST universitaria con CRUD completo para profesores, estudiantes, cursos, matrículas y calificaciones; autenticación JWT, autorización por rol, Entity Framework, SQL Server y documentación Swagger.",
     descriptionEn:

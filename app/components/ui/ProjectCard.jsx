@@ -18,6 +18,7 @@ export default function ProjectCard({
     categoryLabels[project.category]?.[locale] ||
     categoryLabels[project.category]?.es ||
     project.category;
+  const visibleTags = project.stack.slice(0, 3);
   const extra = Math.max(0, project.stack.length - 3);
   const accent = project.accentColor;
   const demoUrl = project.links?.demo?.trim();
@@ -42,37 +43,35 @@ export default function ProjectCard({
         className="flex h-full flex-col rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--project-accent)]"
         aria-label={`${ctaLabel}: ${project.name}`}
       >
-        <div className="relative aspect-[16/10] w-full bg-[var(--bg)] p-2 sm:p-3">
-          <div className="relative h-full w-full overflow-hidden rounded-xl">
-            <Image
-              src={project.coverImage}
-              alt={`Portada del proyecto ${project.name}`}
-              fill
-              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
-              className="object-contain transition duration-500 group-hover:scale-[1.02]"
-              placeholder="blur"
-              blurDataURL={BLUR_DATA_URL}
-              priority={priority}
-            />
-          </div>
+        <div className="relative aspect-[16/10] w-full shrink-0 bg-[var(--bg)]">
+          <Image
+            src={project.coverImage}
+            alt={`Portada del proyecto ${project.name}`}
+            fill
+            sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+            className="object-cover object-center transition duration-500 group-hover:scale-[1.03]"
+            placeholder="blur"
+            blurDataURL={BLUR_DATA_URL}
+            priority={priority}
+          />
           <span
-            className="absolute left-4 top-4 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm"
+            className="absolute left-3 top-3 z-[1] rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-sm backdrop-blur-sm"
             style={{ backgroundColor: `${accent}ee` }}
           >
             {category}
           </span>
         </div>
 
-        <div className="flex flex-1 flex-col p-5 pt-3">
+        <div className="flex flex-1 flex-col p-5">
           <h3 className="font-display text-lg font-bold text-[var(--fg)]">
             {project.name}
           </h3>
-          <p className="mt-1 line-clamp-2 text-sm text-[var(--fg-muted)]">
+          <p className="mt-1.5 min-h-[2.75rem] text-sm leading-relaxed text-[var(--fg-muted)] line-clamp-2">
             {localized.tagline}
           </p>
 
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {project.stack.slice(0, 3).map((tag) => (
+          <div className="mt-3 flex min-h-[1.75rem] flex-wrap gap-1.5">
+            {visibleTags.map((tag) => (
               <span
                 key={tag}
                 className="rounded-full px-2 py-0.5 text-[11px] font-medium"
@@ -88,14 +87,16 @@ export default function ProjectCard({
             )}
           </div>
 
-          <span className="project-cta mt-auto inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border px-4 py-2.5 text-sm font-semibold transition-all duration-300 active:scale-95 pt-5">
-            <span>{ctaLabel}</span>
-            <CtaIcon
-              size={16}
-              className="transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              aria-hidden
-            />
-          </span>
+          <div className="mt-auto pt-5">
+            <span className="project-cta inline-flex w-full items-center justify-center gap-2 rounded-full border px-4 py-2.5 text-sm font-semibold">
+              <span className="relative z-[1]">{ctaLabel}</span>
+              <CtaIcon
+                size={16}
+                className="relative z-[1] transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                aria-hidden
+              />
+            </span>
+          </div>
         </div>
       </a>
     </motion.article>

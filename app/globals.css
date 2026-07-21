@@ -216,20 +216,42 @@ body {
 }
 
 .project-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   border-color: var(--project-accent);
   color: var(--project-accent);
-  background-image: linear-gradient(var(--project-accent), var(--project-accent));
-  background-size: 0% 100%;
-  background-repeat: no-repeat;
-  background-position: left center;
-  transition: background-size 280ms ease, color 280ms ease, box-shadow 280ms ease;
+  background-color: transparent;
+  transition: color 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+}
+
+.project-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--project-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 280ms ease;
+  border-radius: inherit;
+}
+
+.project-card:hover .project-cta::before,
+.project-card:focus-within .project-cta::before {
+  transform: scaleX(1);
 }
 
 .project-card:hover .project-cta,
 .project-card:focus-within .project-cta {
-  background-size: 100% 100%;
   color: #fff;
   box-shadow: 0 0 24px color-mix(in srgb, var(--project-accent) 40%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-cta::before {
+    transition: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

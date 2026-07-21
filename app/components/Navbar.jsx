@@ -19,6 +19,7 @@ import { useI18n } from "@/app/components/providers/AppProviders";
 import ThemeToggle from "@/app/components/ui/ThemeToggle";
 import LanguageSwitcher from "@/app/components/ui/LanguageSwitcher";
 import { LCS_LOGO, LCS_NAME, LCS_URL, SOCIAL } from "@/lib/brand";
+import { useScrollLock } from "@/lib/useScrollLock";
 
 const NAV_ICONS = [Home, User, Briefcase, FolderKanban, Code2, Mail];
 
@@ -30,6 +31,8 @@ export default function Navbar() {
   const [activeHash, setActiveHash] = useState("#home");
   const menuBtnRef = useRef(null);
   const drawerRef = useRef(null);
+
+  useScrollLock(menuOpen);
 
   const menuItems = [
     { label: t.nav.home, href: "/#home" },
@@ -68,21 +71,17 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
     const onEsc = (e) => {
       if (e.key === "Escape") setMenuOpen(false);
     };
     window.addEventListener("keydown", onEsc);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onEsc);
-    };
-  }, [menuOpen]);
+    return () => window.removeEventListener("keydown", onEsc);
+  }, []);
 
   useEffect(() => {
     if (!menuOpen) {
-      menuBtnRef.current?.focus?.();
-      return;
+      const id = window.setTimeout(() => menuBtnRef.current?.focus?.(), 0);
+      return () => window.clearTimeout(id);
     }
     const drawer = drawerRef.current;
     if (!drawer) return;
@@ -108,6 +107,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   const year = new Date().getFullYear();
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <>
@@ -141,7 +141,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="relative z-50 flex items-center gap-2.5 transition hover:opacity-90 active:scale-95 sm:gap-3"
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
             aria-label={`${LCS_NAME} — sitio oficial`}
           >
             <Image
@@ -191,16 +191,19 @@ export default function Navbar() {
               <LanguageSwitcher />
               <ThemeToggle />
             </div>
-            <button
-              ref={menuBtnRef}
-              type="button"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] lg:hidden"
-              aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen((v) => !v)}
-            >
-              {menuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+            {/* Solo hamburguesa en header — la X vive únicamente en el drawer */}
+            {!menuOpen && (
+              <button
+                ref={menuBtnRef}
+                type="button"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] lg:hidden"
+                aria-label="Abrir menú"
+                aria-expanded={false}
+                onClick={() => setMenuOpen(true)}
+              >
+                <Menu size={20} />
+              </button>
+            )}
           </div>
         </nav>
       </header>
@@ -215,7 +218,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
-              onClick={() => setMenuOpen(false)}
+              onClick={closeMenu}
             />
             <motion.aside
               ref={drawerRef}
@@ -223,44 +226,44 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 280, damping: 28 }}
-              className="fixed top-0 right-0 z-40 flex h-dvh w-[min(21rem,88vw)] flex-col border-l border-[var(--border)] bg-[var(--bg-elevated)]/95 backdrop-blur-xl lg:hidden"
+              className="fixed top-0 right-0 z-[45] flex h-dvh w-[min(21rem,88vw)] flex-col border-l border-[var(--border)] bg-[var(--bg-elevated)]/95 backdrop-blur-xl lg:hidden"
               role="dialog"
               aria-modal="true"
               aria-label="Menú de navegación"
             >
-              <div className="flex items-center justify-between gap-3 border-b border-white/5 px-5 py-4">
+              <div className="flex items-center gap-3 border-b border-white/5 px-4 py-4">
                 <a
                   href={LCS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3"
-                  onClick={() => setMenuOpen(false)}
+                  className="flex min-w-0 flex-1 items-center gap-2.5"
+                  onClick={closeMenu}
                   aria-label={LCS_NAME}
                 >
                   <Image
                     src={LCS_LOGO}
-                    alt={LCS_NAME}
-                    width={72}
-                    height={72}
-                    className="h-14 w-14 object-contain"
+                    alt=""
+                    width={56}
+                    height={56}
+                    className="h-12 w-12 shrink-0 object-contain"
                   />
-                  <span className="flex min-w-0 flex-col leading-tight">
-                    <span className="text-sm font-semibold text-[var(--fg)]">
+                  <span className="min-w-0 flex-col leading-tight sm:flex">
+                    <span className="block truncate text-sm font-semibold text-[var(--fg)]">
                       Logic Code Spot
                     </span>
-                    <span className="text-[10px] text-[var(--fg-muted)]">
+                    <span className="block truncate text-[10px] tracking-wide text-[var(--fg-muted)]">
                       Software Solutions
                     </span>
                   </span>
                 </a>
-                <div className="flex items-center gap-2">
+                <div className="flex shrink-0 items-center gap-2">
                   <LanguageSwitcher />
                   <ThemeToggle />
                   <button
                     type="button"
                     className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)]"
                     aria-label="Cerrar menú"
-                    onClick={() => setMenuOpen(false)}
+                    onClick={closeMenu}
                   >
                     <X size={18} />
                   </button>
@@ -283,18 +286,14 @@ export default function Navbar() {
                       >
                         <a
                           href={item.href}
-                          onClick={() => setMenuOpen(false)}
+                          onClick={closeMenu}
                           className={`flex min-h-14 items-center gap-3 rounded-xl px-3 py-3 text-base font-semibold transition ${
                             isActive
                               ? "bg-[var(--accent-soft)] text-[var(--accent)] shadow-[inset_0_0_0_1px_var(--accent)]"
                               : "text-[var(--fg)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent)]"
                           }`}
                         >
-                          <Icon
-                            size={18}
-                            className={`shrink-0 transition ${isActive ? "translate-x-0.5" : "group-hover:translate-x-0.5"}`}
-                            aria-hidden
-                          />
+                          <Icon size={18} className="shrink-0" aria-hidden />
                           {item.label}
                         </a>
                       </motion.li>
@@ -305,7 +304,9 @@ export default function Navbar() {
 
               <div
                 className="mt-auto border-t border-white/5 px-5 pt-4"
-                style={{ paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))" }}
+                style={{
+                  paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))",
+                }}
               >
                 <ul className="mb-3 flex items-center justify-center gap-3">
                   <li>
