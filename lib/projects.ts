@@ -2,9 +2,9 @@
  * Sistema de proyectos — fuente única de verdad.
  *
  * Para agregar un proyecto nuevo:
- * 1. Crear carpeta /public/projects/<slug>/ con cover.png|webp + imágenes de galería (optimizadas, <500KB c/u)
- * 2. Agregar un objeto nuevo al array `projects` con todos los campos del tipo Project
- * 3. Nada más — la card, el grid y la página de detalle se generan automáticamente
+ * 1. Crear carpeta /public/projects/<slug>/ con cover.png|webp (optimizada, <500KB)
+ * 2. Agregar un objeto al array `projects` con `links.demo` (URL en vivo)
+ * 3. La card del grid abre el demo externo — sin páginas internas
  */
 
 export type ProjectCategory =
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     ],
     coverImage: "/projects/vapingchiller/cover.png",
     gallery: ["/projects/vapingchiller/cover.png"],
-    links: {},
+    links: { demo: "https://www.vapingchiller.com/" },
   },
   {
     slug: "logic-code-spot",
@@ -210,10 +210,7 @@ export const projects: Project[] = [
     ],
     coverImage: "/projects/vendelette/cover.png",
     gallery: ["/projects/vendelette/cover.png"],
-    links: {
-      demo: "https://vendelette.vercel.app/",
-      whatsapp: "18494737963",
-    },
+    links: { demo: "https://vendelette.vercel.app/" },
   },
   {
     slug: "goprize",
@@ -320,10 +317,6 @@ export const projects: Project[] = [
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
-}
-
-export function getAllProjectSlugs(): string[] {
-  return projects.map((p) => p.slug);
 }
 
 export const categoryLabels: Record<

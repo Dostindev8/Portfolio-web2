@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { BLUR_DATA_URL, categoryLabels, localizeProject } from "@/lib/projects";
+import { whatsappHref } from "@/lib/brand";
 
 export default function ProjectCard({
   project,
   viewLabel,
+  consultLabel = "Consultar",
   locale = "es",
   priority = false,
 }) {
@@ -19,17 +20,27 @@ export default function ProjectCard({
     project.category;
   const extra = Math.max(0, project.stack.length - 3);
   const accent = project.accentColor;
+  const demoUrl = project.links?.demo?.trim();
+  const hasDemo = Boolean(demoUrl);
+  const href = hasDemo
+    ? demoUrl
+    : whatsappHref(
+        `Hola Dostin, vi el proyecto ${project.name} en tu portfolio y quiero más información.`,
+      );
+  const ctaLabel = hasDemo ? viewLabel : consultLabel;
+  const CtaIcon = hasDemo ? ArrowUpRight : MessageCircle;
 
   return (
     <motion.article
-      layoutId={`project-card-${project.slug}`}
       className="project-card group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-elevated)] shadow-[var(--shadow)] transition duration-300 hover:-translate-y-1"
       style={{ "--project-accent": accent }}
     >
-      <Link
-        href={`/work/${project.slug}`}
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
         className="flex h-full flex-col rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--project-accent)]"
-        aria-label={`${viewLabel}: ${project.name}`}
+        aria-label={`${ctaLabel}: ${project.name}`}
       >
         <div className="relative aspect-[16/10] w-full bg-[var(--bg)] p-2 sm:p-3">
           <div className="relative h-full w-full overflow-hidden rounded-xl">
@@ -78,15 +89,15 @@ export default function ProjectCard({
           </div>
 
           <span className="project-cta mt-auto inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border px-4 py-2.5 text-sm font-semibold transition-all duration-300 active:scale-95 mt-5">
-            <span>{viewLabel}</span>
-            <ArrowUpRight
+            <span>{ctaLabel}</span>
+            <CtaIcon
               size={16}
               className="transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               aria-hidden
             />
           </span>
         </div>
-      </Link>
+      </a>
     </motion.article>
   );
 }

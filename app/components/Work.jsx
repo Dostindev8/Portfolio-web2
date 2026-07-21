@@ -62,6 +62,7 @@ export default function Work() {
             <ProjectCard
               project={project}
               viewLabel={w.viewDetails}
+              consultLabel={w.consult || "Consultar"}
               locale={locale}
               priority={i < 2}
             />
