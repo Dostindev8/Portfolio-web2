@@ -31,7 +31,7 @@ const INTRO_LOGOS = [
   { Icon: SiJavascript, color: "#F7DF1E", ring: 0 },
   { Icon: SiNodedotjs, color: "#339933", ring: 0 },
   { Icon: SiThreedotjs, color: "#ffffff", ring: 0 },
-  { Icon: Sparkles, color: "#A78BFA", ring: 0, isLucide: true },
+  { Icon: Sparkles, color: "#A78BFA", ring: 0 },
   { Icon: SiPrisma, color: "#5A67D8", ring: 0 },
 ];
 
@@ -78,7 +78,7 @@ export default function CinematicIntro({
   const particles = useMemo(() => {
     const rng = seededRandom(42);
     const total = GRID * GRID;
-    return Array.from({ length: total }, (_, i) => ({
+    const list = Array.from({ length: total }, (_, i) => ({
       i,
       order: Math.floor(rng() * total),
       dx: (rng() - 0.5) * 120,
@@ -86,6 +86,8 @@ export default function CinematicIntro({
       rot: (rng() - 0.5) * 180,
       delay: rng() * 0.45,
     }));
+    list.sort((a, b) => a.order - b.order);
+    return list;
   }, []);
 
   const finish = useCallback(() => {
@@ -146,27 +148,25 @@ export default function CinematicIntro({
             }}
             aria-hidden
           >
-            {particles
-              .sort((a, b) => a.order - b.order)
-              .map(({ i, dx, dy, rot, delay }) => (
-                <motion.div
-                  key={i}
-                  className="bg-[var(--bg-elevated)]"
-                  initial={{ opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 }}
-                  animate={{
-                    opacity: 0,
-                    scale: 0.15,
-                    x: dx,
-                    y: dy,
-                    rotate: rot,
-                  }}
-                  transition={{
-                    delay,
-                    duration: 0.55,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                />
-              ))}
+            {particles.map(({ i, dx, dy, rot, delay }) => (
+              <motion.div
+                key={i}
+                className="bg-[var(--bg-elevated)]"
+                initial={{ opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 }}
+                animate={{
+                  opacity: 0,
+                  scale: 0.15,
+                  x: dx,
+                  y: dy,
+                  rotate: rot,
+                }}
+                transition={{
+                  delay,
+                  duration: 0.55,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              />
+            ))}
           </div>
         )}
 
@@ -205,7 +205,7 @@ export default function CinematicIntro({
               }}
               style={{ transformOrigin: "center center" }}
             >
-              {INTRO_LOGOS.map(({ Icon, color, isLucide }, idx) => {
+              {INTRO_LOGOS.map(({ Icon, color }, idx) => {
                 const angle = (idx / INTRO_LOGOS.length) * 360;
                 return (
                   <div
@@ -228,11 +228,7 @@ export default function CinematicIntro({
                         ease: "linear",
                       }}
                     >
-                      {isLucide ? (
-                        <Icon size={18} color={color} aria-hidden />
-                      ) : (
-                        <Icon size={18} color={color} aria-hidden />
-                      )}
+                      <Icon size={18} color={color} aria-hidden />
                     </motion.div>
                   </div>
                 );

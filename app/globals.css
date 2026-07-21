@@ -319,7 +319,7 @@ body {
   }
 }
 
-/* Skills floating cards */
+/* Skills floating cards — GPU transform only */
 @keyframes skill-icon-pulse {
   0%,
   100% {
@@ -332,14 +332,27 @@ body {
   }
 }
 
+@keyframes skill-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
 .skill-card-float {
+  animation: skill-float 5s ease-in-out infinite;
   will-change: transform;
 }
 
+.skill-icon-glow {
+  animation: skill-icon-pulse 3.5s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .skill-card-float {
-    animation: none !important;
-  }
+  .skill-card-float,
   .skill-icon-glow {
     animation: none !important;
   }

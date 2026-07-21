@@ -88,7 +88,7 @@ export default function ProjectCard({
             )}
           </div>
 
-          <span className="project-cta mt-auto inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border px-4 py-2.5 text-sm font-semibold transition-all duration-300 active:scale-95 mt-5">
+          <span className="project-cta mt-auto inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border px-4 py-2.5 text-sm font-semibold transition-all duration-300 active:scale-95 pt-5">
             <span>{ctaLabel}</span>
             <CtaIcon
               size={16}
